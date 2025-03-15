@@ -22,6 +22,25 @@
 <body>
     <h1>Selamat sudah berhasil sampai sejauh ini</h1>
     <p>untuk level selanjutnya silahkan scan qr code di bawah</p>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .image-container {
+            margin: 20px auto;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
         <div class="image-container">
         <!-- Tag <img> untuk menyisipkan gambar -->
         <img src="level-2.png" alt="level-2">
@@ -92,6 +111,11 @@
                 document.getElementById('question1Error').textContent = 'Jawaban salah! Ibukota Indonesia adalah Jakarta.';
                 return false;
             }
+                alert('Selamat! Semua jawaban Anda benar.');
+            window.location.href = 'halaman_selanjutnya.html'; // Ganti dengan halaman tujuan
+            return false; // Mencegah form submit default
+        }
+    </script>
     <p>semoga berhasil</p>
 </body>
 </html>
