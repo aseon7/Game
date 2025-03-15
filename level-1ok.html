@@ -45,7 +45,8 @@
         <!-- Tag <img> untuk menyisipkan gambar -->
         <img src="level-2.png" alt="level-2">
         </div>
-    <div class="form-container">
+    
+        <div class="form-container">
         <h2>Pertanyaannya adalah...</h2>
         <form id="quizForm" onsubmit="return validateQuiz()">
             <div class="form-group">
@@ -53,7 +54,11 @@
                 <input type="text" id="question1" name="question1" placeholder="Jawaban Anda">
                 <div id="question1Error" class="error-message"></div>
             </div>
-            <script>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <script>
         function validateQuiz() {
             // Ambil nilai jawaban
             const answer1 = document.getElementById('question1').value.trim().toLowerCase();
@@ -63,12 +68,14 @@
 
             // Validasi pertanyaan 1
             if (answer1 !== 'ivani vatica') {
-                document.getElementById('question1Error').textContent = 'Jawaban salah! Coba lagi.';
+                document.getElementById('question1Error').textContent = 'Jawaban salah! Ibukota Indonesia adalah Jakarta.';
                 return false;
-            <button type="submit" class="submit-button">Submit</button>
-        </form>
-                alert('Selamat! jawaban Anda benar.');
-            window.location.href = 'halaman_selanjutnya.html'; // Ganti dengan halaman tujuan
+            }
+
+
+            // Jika semua jawaban benar, lanjut ke halaman berikutnya
+            alert('Selamat! Semua jawaban Anda benar.');
+            window.location.href = 'level-2.html'; // Ganti dengan halaman tujuan
             return false; // Mencegah form submit default
         }
     </script>
