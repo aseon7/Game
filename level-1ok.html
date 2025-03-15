@@ -44,9 +44,9 @@
         <div class="image-container">
         <!-- Tag <img> untuk menyisipkan gambar -->
         <img src="level-2.png" alt="level-2">
-        </div>: 
+        </div>
     <div class="form-container">
-        <h2>Form Pertanyaan</h2>
+        <h2>Pertanyaannya adalah...</h2>
         <form id="quizForm" onsubmit="return validateQuiz()">
             <div class="form-group">
                 <label for="question1">Siapa yang sedang ulang tahun?</label>
@@ -63,7 +63,7 @@
 
             // Validasi pertanyaan 1
             if (answer1 !== 'ivani vatica') {
-                document.getElementById('question1Error').textContent = 'Jawaban salah! Ibukota Indonesia adalah Jakarta.';
+                document.getElementById('question1Error').textContent = 'Jawaban salah! Coba lagi.';
                 return false;
             <button type="submit" class="submit-button">Submit</button>
         </form>
