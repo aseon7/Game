@@ -22,6 +22,76 @@
 <body>
     <h1>Selamat sudah berhasil sampai sejauh ini</h1>
     <p>untuk level selanjutnya silahkan scan qr code di bawah</p>
-    <p>Semoga berhasil :)</p>
+        <div class="image-container">
+        <!-- Tag <img> untuk menyisipkan gambar -->
+        <img src="level-2.png" alt="level-2">
+        </div>
+       .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .submit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+
+    <div class="form-container">
+        <h2>Form Pertanyaan</h2>
+        <form id="quizForm" onsubmit="return validateQuiz()">
+            <div class="form-group">
+                <label for="question1">Siapa yang sedang ulang tahun?</label>
+                <input type="text" id="question1" name="question1" placeholder="Jawaban Anda">
+                <div id="question1Error" class="error-message"></div>
+            </div>
+            <script>
+        function validateQuiz() {
+            // Ambil nilai jawaban
+            const answer1 = document.getElementById('question1').value.trim().toLowerCase();
+
+            // Reset pesan error
+            document.getElementById('question1Error').textContent = '';
+
+            // Validasi pertanyaan 1
+            if (answer1 !== 'ivani vatica') {
+                document.getElementById('question1Error').textContent = 'Jawaban salah! Ibukota Indonesia adalah Jakarta.';
+                return false;
+            }
+    <p>semoga berhasil</p>
 </body>
 </html>
