@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat!!!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat sudah berhasil sampai sejauh ini</h1>
+    
+        <h2>Tugasnya sekarang adalah pergi ke tempat kijang, </h2>
+        <form id="quizForm" onsubmit="return validateQuiz()">
+            <div class="form-group">
+                <label for="question1">apa nama surau yang ada di ujung sana?</label>
+                <br>
+                <input type="text" id="question1" name="question1" placeholder="Jawaban Anda">
+                <div id="question1Error" class="error-message"></div>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
 
+    <script>
+        function validateQuiz() {
+            // Ambil nilai jawaban
+            const answer1 = document.getElementById('question1').value.trim().toLowerCase();
+
+            // Reset pesan error
+            document.getElementById('question1Error').textContent = '';
+
+            // Validasi pertanyaan 1
+            if (answer1 !== 'madrasatul islamiah') {
+                document.getElementById('question1Error').textContent = 'Jawaban salah! Coba lagi.';
+                return false;
+            }
+
+
+            // Jika semua jawaban benar, lanjut ke halaman berikutnya
+            alert('Bagus, jawaban benar. Sekarang periksa petunjuk yang ada di pagarnya.');
+            window.location.href = 'level-2.html'; // Ganti dengan halaman tujuan
+            return false; // Mencegah form submit default
+        }
+    </script>
+    <p>semoga berhasil</p>
+</body>
+</html>
