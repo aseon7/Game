@@ -29,11 +29,11 @@
 
     <form id="quizForm">
         <div class="question">
-            <p>Telpon Mak Tuo dan tanyakan "Apa panggilan nanggut di kampung"?</p>
+            <p>Telpon Mak Tuo dan tanyakan "Orang Seleman biasanya panggil Nanggut dengan panggilan apa?"</p>
             <label><input type="radio" name="q1" value="a"> Pak Maryam</label><br>
             <label><input type="radio" name="q1" value="b"> Ayah Sanin</label><br>
-            <label><input type="radio" name="q1" value="c"> Pak Barai</label><br>
-            <label><input type="radio" name="q1" value="d"> Ayah Yaser</label><br>
+            <label><input type="radio" name="q1" value="c"> Ayah Yaser</label><br>
+            <label><input type="radio" name="q1" value="d"> Pak Barai</label><br>
             <label><input type="radio" name="q1" value="e"> Dalman</label><br>
         </div>
 
@@ -41,7 +41,7 @@
     </form>
 
     <div id="result" class="result">
-        <p>Selamat! Semua jawaban Anda benar.</p>
+        <p>Selamat! Jawaban Anda benar.</p>
         <a href="level-2ok.html">Lanjut ke level berikutnya</a>
     </div>
 
@@ -51,7 +51,7 @@
 
             // Jawaban yang benar
             const correctAnswers = {
-                q1: 'c', // Jawaban benar untuk pertanyaan 1
+                q1: 'd', // Jawaban benar untuk pertanyaan 1
             };
 
             // Ambil jawaban dari form
@@ -65,7 +65,7 @@
             if (allCorrect) {
                 document.getElementById('result').style.display = 'block';
             } else {
-                alert('Maaf, ada jawaban yang salah. Silakan coba lagi.');
+                alert('Maaf, jawaban salah. Silakan coba lagi.');
             }
         });
     </script>
