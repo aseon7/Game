@@ -51,6 +51,7 @@
         <form id="quizForm" onsubmit="return validateQuiz()">
             <div class="form-group">
                 <label for="question1">Siapa yang sedang ulang tahun?</label>
+                <br>
                 <input type="text" id="question1" name="question1" placeholder="Jawaban Anda">
                 <div id="question1Error" class="error-message"></div>
             </div>
@@ -68,7 +69,7 @@
 
             // Validasi pertanyaan 1
             if (answer1 !== 'ivany vatica') {
-                document.getElementById('question1Error').textContent = 'Jawaban salah! Ibukota Indonesia adalah Jakarta.';
+                document.getElementById('question1Error').textContent = 'Jawaban salah! Coba lagi.';
                 return false;
             }
 
