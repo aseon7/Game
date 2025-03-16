@@ -58,23 +58,39 @@
 <body>
 
     <div class="form-container">
-        <h2>Form Pertanyaan</h2>
+        <h2>Tantangan Pertanyaan</h2>
         <form id="quizForm" onsubmit="return validateQuiz()">
+            
             <div class="form-group">
                 <label for="question1">1. Bulan apakah wahyu pertama diturunkan kepada nabi Muhammad?</label>
                 <input type="text" id="question1" name="question1" placeholder="Jawaban Anda">
                 <div id="question1Error" class="error-message"></div>
             </div>
+            
             <div class="form-group">
                 <label for="question2">2. Berapa hasil dari 7 x 3 - 1?</label>
                 <input type="number" id="question2" name="question2" placeholder="Jawaban Anda">
                 <div id="question2Error" class="error-message"></div>
             </div>
+            
             <div class="form-group">
                 <label for="question3">3. Siapa nama cikgu besar tadika permata MAIWP?</label>
                 <input type="text" id="question3" name="question3" placeholder="Jawaban Anda">
                 <div id="question3Error" class="error-message"></div>
             </div>
+
+            <div class="form-group">
+                <label for="question4">4. Berapakah motor ayah, ditambah motor atok, ditambah mobil atok, dikurang motor mak?</label>
+                <input type="text" id="question4" name="question4" placeholder="Jawaban Anda">
+                <div id="question4Error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="question5">5. Berapakah rukun Islam + rukun iman + jumlah surah dalam al-Qur'an + jumlah Juz dalam al-Qur'an?</label>
+                <input type="text" id="question5" name="question5" placeholder="Jawaban Anda">
+                <div id="question5Error" class="error-message"></div>
+            </div>
+            
             <button type="submit" class="submit-button">Submit</button>
         </form>
     </div>
@@ -85,11 +101,16 @@
             const answer1 = document.getElementById('question1').value.trim().toLowerCase();
             const answer2 = document.getElementById('question2').value.trim();
             const answer3 = document.getElementById('question3').value.trim().toLowerCase();
+            const answer4 = document.getElementById('question4').value.trim();
+            const answer5 = document.getElementById('question5').value.trim();
 
             // Reset pesan error
             document.getElementById('question1Error').textContent = '';
             document.getElementById('question2Error').textContent = '';
             document.getElementById('question3Error').textContent = '';
+            document.getElementById('question4Error').textContent = '';
+            document.getElementById('question5Error').textContent = '';
+
 
             // Validasi pertanyaan 1
             if (answer1 !== 'ramadhan') {
@@ -104,8 +125,20 @@
             }
 
             // Validasi pertanyaan 3
-            if (answer3 !== 'bonda humaira') {
+            if (answer3 !== 'bonda humairah') {
                 document.getElementById('question3Error').textContent = 'Jawaban salah! Coba lagi.';
+                return false;
+            }
+
+            // Validasi pertanyaan 4
+            if (answer4 !== '5665') {
+                document.getElementById('question4Error').textContent = 'Jawaban salah! Coba lagi.';
+                return false;
+            }
+
+            // Validasi pertanyaan 5
+            if (answer5 !== '155') {
+                document.getElementById('question5Error').textContent = 'Jawaban salah! Coba lagi.';
                 return false;
             }
 
