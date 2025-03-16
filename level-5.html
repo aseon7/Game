@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pertanyaan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .submit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
 
+    <div class="form-container">
+        <h2>Tantangan Pertanyaan</h2>
+        <form id="quizForm" onsubmit="return validateQuiz()">
+            
+            <div class="form-group">
+                <label for="question1">1. Indonesia terletak di antara dua benua, yaitu benua Asia dan benua .....</label>
+                <input type="text" id="question1" name="question1" placeholder="Jawaban Anda">
+                <div id="question1Error" class="error-message"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="question2">2. Berapa hasil dari 999+2-1:5?</label>
+                <input type="number" id="question2" name="question2" placeholder="Jawaban Anda">
+                <div id="question2Error" class="error-message"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="question3">3. jarak dari rumah ke tempat kijang adalah 1000 meter, ditempuh dalam masa 20 menit. berapakah jarak yang ditempuh pulang dan pergi?</label>
+                <input type="text" id="question3" name="question3" placeholder="Jawaban Anda">
+                <div id="question3Error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="question4">4. Berapa pula waktu yang dibutuhkan?</label>
+                <input type="text" id="question4" name="question4" placeholder="Jawaban Anda">
+                <div id="question4Error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="question5">5. Siapakah nama saudara tertua Gaza?</label>
+                <input type="text" id="question5" name="question5" placeholder="Jawaban Anda">
+                <div id="question5Error" class="error-message"></div>
+            </div>
+            
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validateQuiz() {
+            // Ambil nilai jawaban
+            const answer1 = document.getElementById('question1').value.trim().toLowerCase();
+            const answer2 = document.getElementById('question2').value.trim();
+            const answer3 = document.getElementById('question3').value.trim().toLowerCase();
+            const answer4 = document.getElementById('question4').value.trim().toLowerCase();
+            const answer5 = document.getElementById('question5').value.trim().toLowerCase();
+
+            // Reset pesan error
+            document.getElementById('question1Error').textContent = '';
+            document.getElementById('question2Error').textContent = '';
+            document.getElementById('question3Error').textContent = '';
+            document.getElementById('question4Error').textContent = '';
+            document.getElementById('question5Error').textContent = '';
+
+
+            // Validasi pertanyaan 1
+            if (answer1 !== 'australia') {
+                document.getElementById('question1Error').textContent = 'Jawaban salah! Coba lagi.';
+                return false;
+            }
+
+            // Validasi pertanyaan 2
+            if (answer2 !== '20') {
+                document.getElementById('question2Error').textContent = 'Jawaban salah! Coba lagi.';
+                return false;
+            }
+
+            // Validasi pertanyaan 3
+            if (answer3 !== '2000 meter') {
+                document.getElementById('question3Error').textContent = 'Jawaban salah! Coba lagi.';
+                return false;
+            }
+
+            // Validasi pertanyaan 4
+            if (answer4 !== '40 menit') {
+                document.getElementById('question4Error').textContent = 'Jawaban salah! Coba lagi.';
+                return false;
+            }
+
+            // Validasi pertanyaan 5
+            if (answer5 !== 'safad') {
+                document.getElementById('question5Error').textContent = 'Jawaban salah! Coba lagi.';
+                return false;
+            }
+
+            // Jika semua jawaban benar, lanjut ke halaman berikutnya
+            alert('Selamat! Semua jawaban Anda benar.');
+            window.location.href = 'level-5ok.html'; // Ganti dengan halaman tujuan
+            return false; // Mencegah form submit default
+        }
+    </script>
+
+</body>
+</html>
