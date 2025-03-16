@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pertanyaan Pilihan Ganda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
 
+    <h1>masukkan kode <B><U>5J9G+PF</U></B> di Google Maps, lalu jawab pertanyaan di bawah</h1>
+
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Apa nama surau tersebut?</p>
+            <label><input type="radio" name="q1" value="a"> Madrasah Asy-Syakirin</label><br>
+            <label><input type="radio" name="q1" value="b"> Masjid Jami'</label><br>
+            <label><input type="radio" name="q1" value="c"> Madrasatul Islamiah</label><br>
+            <label><input type="radio" name="q1" value="d"> Surau Nurul Haq</label><br>
+            <label><input type="radio" name="q1" value="e"> al-Gufran</label><br>
+        </div>
+
+      <div class="question">
+            <p>2. Di mana letak surau tersebut ?</p>
+            <label><input type="radio" name="q2" value="a"> Penchala Indah</label><br>
+            <label><input type="radio" name="q2" value="b"> Seri Penchala</label><br>
+            <label><input type="radio" name="q2" value="c"> Seleman</label><br>
+            <label><input type="radio" name="q2" value="d"> Palimbayan Indah</label><br>
+            <label><input type="radio" name="q2" value="e"> Penchala Hilir</label><br>
+      </div>
+
+      <div class="question">
+            <p>3. Berapakah lubang jendela tingkat 2 yang menghadap ke depan?</p>
+            <label><input type="radio" name="q3" value="a"> 2</label><br>
+            <label><input type="radio" name="q3" value="b"> 4</label><br>
+            <label><input type="radio" name="q3" value="c"> 6</label><br>
+            <label><input type="radio" name="q3" value="d"> 10</label><br>
+            <label><input type="radio" name="q3" value="e"> 15</label><br>
+      </div>
+
+      <div class="question">
+            <p>4. Siapa nama ketua pengurus surau tersebut?</p>
+            <label><input type="radio" name="q1" value="a"> Fatih Shaddiq Arafat</label><br>
+            <label><input type="radio" name="q1" value="b"> Fatimah Syafiya Arafat</label><br>
+            <label><input type="radio" name="q1" value="c"> Yaser Arafat</label><br>
+            <label><input type="radio" name="q1" value="d"> Suci Ulanoko</label><br>
+            <label><input type="radio" name="q1" value="e"> Tidak tahu, yang jelas bukan mereka berempat</label><br>
+      </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="result" class="result">
+        <p>Selamat! Jawaban Anda benar.</p>
+        <a href="level-4ok.html">Lanjut ke level berikutnya</a>
+    </div>
+
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form submit secara default
+
+            // Jawaban yang benar
+            const correctAnswers = {
+                q1: 'a', // Jawaban benar untuk pertanyaan 1
+                q1: 'd', // Jawaban benar untuk pertanyaan 1
+                q1: 'c', // Jawaban benar untuk pertanyaan 1
+                q1: 'e', // Jawaban benar untuk pertanyaan 1
+            };
+
+            // Ambil jawaban dari form
+            const userAnswers = {
+                q1: document.querySelector('input[name="q1"]:checked')?.value,
+                q2: document.querySelector('input[name="q2"]:checked')?.value,
+                q3: document.querySelector('input[name="q3"]:checked')?.value,
+                q4: document.querySelector('input[name="q4"]:checked')?.value,
+            };
+
+            // Cek apakah semua jawaban benar
+            const allCorrect = Object.keys(correctAnswers).every(key => userAnswers[key] === correctAnswers[key]);
+
+            if (allCorrect) {
+                document.getElementById('result').style.display = 'block';
+            } else {
+                alert('Maaf, jawaban salah. Silakan coba lagi.');
+            }
+        });
+    </script>
+
+</body>
+</html>
