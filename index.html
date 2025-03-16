@@ -44,6 +44,33 @@
             <label><input type="radio" name="q2" value="d"> Syawal</label><br>
             <label><input type="radio" name="q2" value="e"> Safar</label><br>
         </div>
+        
+        <div class="question">
+            <p>3. Bulan ke-9 kalender Masehi adalah?</p>
+            <label><input type="radio" name="q2" value="a"> Januari </label><br>
+            <label><input type="radio" name="q2" value="b"> Maret </label><br>
+            <label><input type="radio" name="q2" value="c"> Mei </label><br>
+            <label><input type="radio" name="q2" value="d"> Juli </label><br>
+            <label><input type="radio" name="q2" value="e"> September</label><br>
+        </div>
+
+        <div class="question">
+            <p>4. Dan tidaklah kami ciptakan jin dan manusia melainkan untuk ......... kepadaku</p>
+            <label><input type="radio" name="q2" value="a"> bermain</label><br>
+            <label><input type="radio" name="q2" value="b"> menyanyi</label><br>
+            <label><input type="radio" name="q2" value="c"> menari </label><br>
+            <label><input type="radio" name="q2" value="d"> membangkang</label><br>
+            <label><input type="radio" name="q2" value="e"> beribadah</label><br>
+        </div>
+
+        <div class="question">
+            <p>5. Siapakah yang bukan merupakan anak nabi Muhammad?</p>
+            <label><input type="radio" name="q2" value="a"> Zaid bin Haritsah</label><br>
+            <label><input type="radio" name="q2" value="b"> Qasim</label><br>
+            <label><input type="radio" name="q2" value="c"> Ibrahim</label><br>
+            <label><input type="radio" name="q2" value="d"> Zainab</label><br>
+            <label><input type="radio" name="q2" value="e"> Ruqayah</label><br>
+        </div>
 
         <button type="submit">Submit</button>
     </form>
@@ -61,12 +88,18 @@
             const correctAnswers = {
                 q1: 'c', // Jawaban benar untuk pertanyaan 1
                 q2: 'c'  // Jawaban benar untuk pertanyaan 2
+                q3: 'e', // Jawaban benar untuk pertanyaan 1
+                q4: 'e'  // Jawaban benar untuk pertanyaan 2
+                q5: 'a'  // Jawaban benar untuk pertanyaan 2
             };
 
             // Ambil jawaban dari form
             const userAnswers = {
                 q1: document.querySelector('input[name="q1"]:checked')?.value,
-                q2: document.querySelector('input[name="q2"]:checked')?.value
+                q2: document.querySelector('input[name="q2"]:checked')?.value,
+                q3: document.querySelector('input[name="q3"]:checked')?.value,
+                q4: document.querySelector('input[name="q4"]:checked')?.value,
+                q5: document.querySelector('input[name="q5"]:checked')?.value
             };
 
             // Cek apakah semua jawaban benar
