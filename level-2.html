@@ -1,1 +1,74 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pertanyaan Pilihan Ganda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Form Pertanyaan Pilihan Ganda</h1>
+
+    <form id="quizForm">
+        <div class="question">
+            <p>Telpon Mak Tuo dan tanyakan "Apa panggilan nanggut di kampung"?</p>
+            <label><input type="radio" name="q1" value="a"> Pak Maryam</label><br>
+            <label><input type="radio" name="q1" value="b"> Ayah Sanin</label><br>
+            <label><input type="radio" name="q1" value="c"> Pak Barai</label><br>
+            <label><input type="radio" name="q1" value="d"> Ayah Yaser</label><br>
+            <label><input type="radio" name="q1" value="e"> Dalman</label><br>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="result" class="result">
+        <p>Selamat! Semua jawaban Anda benar.</p>
+        <a href="level-2ok.html">Lanjut ke level berikutnya</a>
+    </div>
+
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form submit secara default
+
+            // Jawaban yang benar
+            const correctAnswers = {
+                q1: 'c', // Jawaban benar untuk pertanyaan 1
+            };
+
+            // Ambil jawaban dari form
+            const userAnswers = {
+                q1: document.querySelector('input[name="q1"]:checked')?.value,
+            };
+
+            // Cek apakah semua jawaban benar
+            const allCorrect = Object.keys(correctAnswers).every(key => userAnswers[key] === correctAnswers[key]);
+
+            if (allCorrect) {
+                document.getElementById('result').style.display = 'block';
+            } else {
+                alert('Maaf, ada jawaban yang salah. Silakan coba lagi.');
+            }
+        });
+    </script>
+
+</body>
+</html>
