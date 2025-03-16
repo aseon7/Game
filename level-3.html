@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakukan tugas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
 
+    <h1>Lakukan tugasnya dan jawab pertanyaannya</h1>
+  <br>
+  <h2>Buka buku 64 Sahabat Teladan Utama, jilid 7</h2>
+
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Siapa yang dikisahkan di buku ini?"</p>
+            <label><input type="radio" name="q1" value="a"> Abu Bakar</label><br>
+            <label><input type="radio" name="q1" value="b"> Ali</label><br>
+            <label><input type="radio" name="q1" value="c"> Abu Jahal</label><br>
+            <label><input type="radio" name="q1" value="d"> Abu Hurairah</label><br>
+            <label><input type="radio" name="q1" value="e"> Abu Ubaidah</label><br>
+        </div>
+
+      <div class="question">
+            <p>2. Pada halaman 18, dimanakah Sa'id bertugas menjadi walikota?"</p>
+            <label><input type="radio" name="q1" value="a"> Mekah</label><br>
+            <label><input type="radio" name="q1" value="b"> Madinah</label><br>
+            <label><input type="radio" name="q1" value="c"> Yaman</label><br>
+            <label><input type="radio" name="q1" value="d"> Damaskus</label><br>
+            <label><input type="radio" name="q1" value="e"> Mesir</label><br>
+        </div>
+
+      <div class="question">
+            <p>3. Siapakah Ummu Amarah yang melindungi Nabi ketika perang Uhud (halaman 34)?"</p>
+            <label><input type="radio" name="q1" value="a"> Thalhah</label><br>
+            <label><input type="radio" name="q1" value="b"> Abu Bakar</label><br>
+            <label><input type="radio" name="q1" value="c"> Abu Ubaidah</label><br>
+            <label><input type="radio" name="q1" value="d"> Nushaibah</label><br>
+            <label><input type="radio" name="q1" value="e"> Saad bin Abi Waqqash</label><br>
+        </div>
+
+      <div class="question">
+            <p>4. Berapakah jumlah logo Ensiklopedia Kisah Insan Teladan pada halaman terakhir buku ini?"</p>
+            <label><input type="radio" name="q1" value="a"> 56</label><br>
+            <label><input type="radio" name="q1" value="b"> 55</label><br>
+            <label><input type="radio" name="q1" value="c"> 54</label><br>
+            <label><input type="radio" name="q1" value="d"> 53</label><br>
+            <label><input type="radio" name="q1" value="e"> 52</label><br>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="result" class="result">
+        <p>Selamat! Jawaban Anda benar.</p>
+        <a href="level-3ok.html">Lanjut ke level berikutnya</a>
+    </div>
+
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form submit secara default
+
+            // Jawaban yang benar
+            const correctAnswers = {
+                q1: 'e', // Jawaban benar untuk pertanyaan 1
+                q1: 'd', // Jawaban benar untuk pertanyaan 2
+                q1: 'd', // Jawaban benar untuk pertanyaan 3
+                q1: 'c', // Jawaban benar untuk pertanyaan 4
+            };
+
+            // Ambil jawaban dari form
+            const userAnswers = {
+                q1: document.querySelector('input[name="q1"]:checked')?.value,
+                q2: document.querySelector('input[name="q2"]:checked')?.value,
+                q3: document.querySelector('input[name="q3"]:checked')?.value,
+                q4: document.querySelector('input[name="q4"]:checked')?.value,
+            };
+
+            // Cek apakah semua jawaban benar
+            const allCorrect = Object.keys(correctAnswers).every(key => userAnswers[key] === correctAnswers[key]);
+
+            if (allCorrect) {
+                document.getElementById('result').style.display = 'block';
+            } else {
+                alert('Maaf, jawaban salah. Silakan coba lagi.');
+            }
+        });
+    </script>
+
+</body>
+</html>
