@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat!!!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat sudah berhasil sampai sejauh ini</h1>
+    
+        <h2>Masih ingat tempat ini? pastinya dong.<br>
+          kalau memang masih ingat,<br></h2>
+        <form id="quizForm" onsubmit="return validateQuiz()">
+            <div class="form-group">
+                <label for="question1">apa nama sekolah ini?</label>
+                <br>
+                <input type="text" id="question1" name="question1" placeholder="Jawaban Anda">
+                <div id="question1Error" class="error-message"></div>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
 
+    <script>
+        function validateQuiz() {
+            // Ambil nilai jawaban
+            const answer1 = document.getElementById('question1').value.trim().toLowerCase();
+
+            // Reset pesan error
+            document.getElementById('question1Error').textContent = '';
+
+            // Validasi pertanyaan 1
+            if (answer1 !== 'ibnu kathir') {
+                document.getElementById('question1Error').textContent = 'Jawaban salah! Coba lagi.';
+                return false;
+            }
+
+
+            // Jika semua jawaban benar, lanjut ke halaman berikutnya
+            alert('Bagus, jawaban benar. selanjutnya akan ada foto, kita kesana ke tempat itu. cari petunjuk di salah satu lubang semennya');
+          window.location.href = 'https://photos.app.goo.gl/gB3nPpGoL8wyo4ew7';
+            return false; // Mencegah form submit default
+        }
+    </script>
+    <p>semoga berhasil</p>
+</body>
+</html>
